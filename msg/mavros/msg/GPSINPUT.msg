@@ -1,0 +1,31 @@
+uint8 GPS_FIX_TYPE_NO_GPS=0
+uint8 GPS_FIX_TYPE_NO_FIX=1
+uint8 GPS_FIX_TYPE_2D_FIX=2
+uint8 GPS_FIX_TYPE_3D_FIX=3
+uint8 GPS_FIX_TYPE_DGPS=4
+uint8 GPS_FIX_TYPE_RTK_FLOATR=5
+uint8 GPS_FIX_TYPE_RTK_FIXEDR=6
+uint8 GPS_FIX_TYPE_STATIC=7
+uint8 GPS_FIX_TYPE_PPP=8
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+uint8 fix_type
+uint8 gps_id
+uint16 ignore_flags
+uint32 time_week_ms
+uint16 time_week
+int32 lat
+int32 lon
+float32 alt
+float32 hdop
+float32 vdop
+float32 vn
+float32 ve
+float32 vd
+float32 speed_accuracy
+float32 horiz_accuracy
+float32 vert_accuracy
+uint8 satellites_visible
+uint16 yaw

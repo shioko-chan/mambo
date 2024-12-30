@@ -1,0 +1,8 @@
+[package]
+name = "sim_control_bridge"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+msg = { path = "../msg" }
+rosrust = { workspace = true }

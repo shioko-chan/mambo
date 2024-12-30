@@ -1,0 +1,19 @@
+[package]
+name = "main"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ctrlc = "3.4.5"
+
+[workspace]
+members = ["msg", "sim_control_bridge", "sim_data_bridge"]
+resolver = "2"
+
+[workspace.dependencies]
+rosrust = "0.9"
+rosrust_msg = "0.1.7"
+
+
+[patch.crates-io]
+xml-rs = { git = "https://github.com/kornelski/xml-rs.git", tag = "0.3.6" }

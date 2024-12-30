@@ -1,0 +1,8 @@
+[package]
+name = "msg"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rosrust = { workspace = true }
+rosrust_msg = { workspace = true }
