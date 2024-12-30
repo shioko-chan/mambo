@@ -30,7 +30,7 @@ fn main() {
         if childs.iter_mut().any(|(name, child)| {
             child
                 .try_wait()
-                .expect(format!("Failed to check child process {}", name).as_str())
+                .unwrap_or_else(|_| panic!("Failed to check child process {}", name))
                 .is_some()
         }) {
             break;
@@ -39,6 +39,6 @@ fn main() {
     childs.into_iter().for_each(|(name, mut child)| {
         child
             .kill()
-            .expect(format!("Failed to kill child process {}", name).as_str());
+            .unwrap_or_else(|_| panic!("Failed to kill child process {}", name));
     });
 }

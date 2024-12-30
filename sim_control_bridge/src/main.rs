@@ -4,7 +4,7 @@ fn main() {
     let rate = rosrust::rate(20.0);
     let cur_state = Arc::new(Mutex::new(msg::mavros_msgs::State::default()));
     let cur_state_clone = cur_state.clone();
-    let _ = rosrust::subscribe("/mavros/state", 10, move |state| {
+    let _state_sub = rosrust::subscribe("/mavros/state", 10, move |state| {
         if let Ok(mut cur_state) = cur_state_clone.lock() {
             *cur_state = state;
         } else {
